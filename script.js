@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
     taskInput.focus();
   }
 
-  addTaskButton.addEventListener("click", function (event) {
-    if (event.key === "Enter") {
-      addTask();
-    }
+  addTaskButton.addEventListener("click", function () {
+    console.log("button pressed");
+    addTask();
+  
   });
 
   return loadTasks();
