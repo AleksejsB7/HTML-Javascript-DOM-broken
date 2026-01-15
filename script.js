@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const taskInput = document.getElementById("taskInput");
   const addTaskButton = document.getElementById("addTaskButton");
+  const taskListContainer = document.getElementById("taskList")
   const STORAGE_KEY = "todoTasks";
 
   function saveTasks() {
     let tasks = [];
-    const listItems = taskListContainer.querySelectorAll("li");
+    const listItems = taskListContainer.querySelectorAll("ul");
 
     listItems.forEach(function (item) {
       const taskText = item.querySelector("span").textContent;
@@ -75,11 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
     taskInput.focus();
   }
 
-  taskInput.addEventListener("keypress", function (event) {
+  addTaskButton.addEventListener("click", function (event) {
     if (event.key === "Enter") {
       addTask();
     }
   });
 
-  loadTasks();
+  return loadTasks();
 });
